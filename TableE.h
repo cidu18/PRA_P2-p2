@@ -26,16 +26,17 @@ class TableEntry {
 		 key = "";
 	 }
 
-	 friend bool operator==(cosnt TableEntry<T> &t1, const TableEntry<T> &t2){
+	 friend bool operator==(const TableEntry<T> &t1, const TableEntry<T> &t2){
 		return t1.key == t2.key;		
 	 } 
 	 
-	 friend bool operator!=(cosnt TabelEntry<T> &t1, const TableEntry<T> &t2){
+	 friend bool operator!=(const TableEntry<T> &t1, const TableEntry<T> &t2){
 	 	return t1.key != t2.key;
 	 }
 	 
-	 friend std::ostrem& operator <<(std::ostream &out, const TableEntry<T> &te ){
-	 	out << "Clave:"te.key "->" << te.value << std::endl; 
+	 friend std::ostream& operator <<(std::ostream &out, const TableEntry<T> &te ){
+	 	out << "Clave:" << te.key << "->" << te.value << std::endl; 
+		return out;
 	 }
 
 };
